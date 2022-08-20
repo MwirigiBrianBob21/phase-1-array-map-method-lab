@@ -12,5 +12,13 @@ const tutorials = [
 ];
 
 const titleCased = () => {
-  return tutorials
+  return tutorials.map((tutorialLine) => {
+    const tokens = tutorialLine.split(" "); // specified separator for the message  and returns the characters as arrays
+    
+    const upperCasedTokens = tokens.map( (token) =>
+      token.charAt(0).toUpperCase() + token.slice(1)
+    ); // returns the character at index 0 in uppercase and also slices it to 1
+    const message = upperCasedTokens.join(" ");
+    return message;
+  });
 }
